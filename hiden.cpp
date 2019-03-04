@@ -19,6 +19,11 @@
 #include <string>
 #include <fstream>
 
+#include <libintl.h>
+#include <locale.h>
+
+#define _(STRING) gettext(STRING)
+
 /* Using Declarations */
 using std::cin;
 using std::cout;
@@ -37,6 +42,11 @@ string encrypt(string password, string text);
 /* Start of the Program */
 int main()
 {
+	/* Set i18n Environment */
+	setlocale(LC_ALL, "");
+	bindtextdomain ("hiden", "locale/");
+	textdomain ("hiden");
+	
 	menu();
 	fselection();
 	finish();
@@ -47,19 +57,19 @@ int main()
 void menu()
 {
 	/* Program Information & Description */
-	cout << "Hiden, Encryption Program\n"
-		 << "Copyright (C) 2014-2019 Peniel Vargas\n\n"
-		 << "This program comes with ABSOLUTELY NO WARRANTY.\n"
-		 << "This is free software, and you are welcome to\n"
-		 << "redistribute it under certain conditions\n\n"
-		 << "Course: COMP 3410 - Computer Security\n"
-		 << "Class Project: Encryption Program Project"
+	cout << _("Hiden, Encryption Program\n")
+		 << _("Copyright (C) 2014-2019 Peniel Vargas\n\n")
+		 << _("This program comes with ABSOLUTELY NO WARRANTY.\n")
+		 << _("This is free software, and you are welcome to\n")
+		 << _("redistribute it under certain conditions\n\n")
+		 << _("Course: COMP 3410 - Computer Security\n")
+		 << _("Class Project: Encryption Program Project")
 		 << endl
 		 << endl
-		 << "Hiden from Japanese, meaning: secret, is a simple encryption program\n"
-		 << "written in the C++ Programming Language, which uses its very own and\n"
-		 << "unique encryption algorithm. Hiden is a CLI (Command Line Interface)\n"
-		 << "program which provides the user with a way to encrypt files."
+		 << _("Hiden from Japanese, meaning: secret, is a simple encryption program\n")
+		 << _("written in the C++ Programming Language, which uses its very own and\n")
+		 << _("unique encryption algorithm. Hiden is a CLI (Command Line Interface)\n")
+		 << _("program which provides the user with a way to encrypt files.")
 		 << endl
 		 << endl;
 }
@@ -73,7 +83,7 @@ void finish()
 	string state;
 
 	cout << endl
-		 << "Do you wish to run the program again? (Yes/No) ";
+		 << _("Do you wish to run the program again? (Yes/No) ");
 	getline(cin, state, '\n');
 
 	if (("Yes" == state) || ("yes" == state))
@@ -97,9 +107,9 @@ void finish()
 	else
 	{
 		cout << endl
-			 << "Invalid Option!\n"
-			 << "Program Terminated.\n\n"
-			 << "Press the [enter] key to exit...";
+			 << _("Invalid Option!\n")
+			 << _("Program Terminated.\n\n")
+			 << _("Press the [enter] key to exit...");
 		cin.clear();			// Clears the input buffer
 		cin.get();				// Waits for an input operation
 		return;
@@ -124,21 +134,21 @@ void fselection()
 	fstream file;
 	string filename, password, text;
 
-	cout << "File Selection\n\n"
-		 << "To Encrypt/Decrypt a File:\n"
-		 << "1) The file must be present in the program current directory.\n"
-		 << "2) The filename must contain its file extension, if it has one.\n"
-		 << "3) A unique password is required."
+	cout << _("File Selection\n\n")
+		 << _("To Encrypt/Decrypt a File:\n")
+		 << _("1) The file must be present in the program current directory.\n")
+		 << _("2) The filename must contain its file extension, if it has one.\n")
+		 << _("3) A unique password is required.")
 		 << endl
 		 << endl
-		 << "Note: The password will be required when decrypting the file.\n"
-		 << "If the password is enter incorrectly, when trying to decrypt the file,\n"
-		 << "the file will be encrypted again; making its decryption nearly impossible."
+		 << _("Note: The password will be required when decrypting the file.\n")
+		 << _("If the password is enter incorrectly, when trying to decrypt the file,\n")
+		 << _("the file will be encrypted again; making its decryption nearly impossible.")
 		 << endl
 		 << endl
-		 << "Filename:";
+		 << _("Filename:");
 	getline(cin, filename, '\n');	// Stores in filename a text line entered at the CLI
-	cout << "Password:";
+	cout << _("Password:");
 	getline(cin, password, '\n');	// Stores in password a text line entered at the CLI
 
 	/*
@@ -164,9 +174,9 @@ void fselection()
 	}
 	else
 		cout << endl
-			 << "Such a file does not exist!\n"
-			 << "Perhaps, the file extension was missing\n"
-			 << "or the file is not in the program's directory."
+			 << _("Such a file does not exist!\n")
+			 << _("Perhaps, the file extension was missing\n")
+			 << _("or the file is not in the program's directory.")
 			 << endl;
 }
 

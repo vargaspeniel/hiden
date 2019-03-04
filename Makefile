@@ -14,13 +14,34 @@
 # along with this program. If not, see <https://www.gnu.org/licenses/>.
 CPPFLAGS := -std=c++11
 BINNAME := hiden
+LANGS := ja
+LOCALEDIR := locale
+POTFILE := ${LOCALEDIR}/${BINNAME}.pot
+POFILES := ${addprefix ${LOCALEDIR}/,${addsuffix .po,${LANGS}}}
+POTEMPFILES := ${addprefix ${LOCALEDIR}/,${addsuffix .po~,${LANGS}}}
+MOFILES = ${POFILES:.po=.mo}
 
 default: build
 
 build:
 	g++ ${CPPFLAGS} -o ${BINNAME} ${BINNAME}.cpp
 	
-clean:
-	@rm -f ${BINNAME}
+locale: ${MOFILES}
 
-.PHONY: clean
+${POTFILE}:
+	xgettext --language=C++ --add-comments --sort-output \
+	--default-domain=${BINNAME} --from-code=UTF-8 --keyword=_ \
+	--output=$@ ${BINNAME}.cpp
+
+${LOCALEDIR}/%.po: ${POTFILE}
+	msginit --locale=$* --no-translator --input=$< --output=$@
+	msgmerge --update $@ $<
+
+%.mo: %.po
+	msgfmt -o $@ $<
+
+clean:
+	@rm -f ${BINNAME} ${LOCALEDIR}/*.mo
+
+.PHONY: clean ${POTFILE}
+.PRECIOUS: ${LOCALEDIR}/%.po
