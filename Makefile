@@ -36,7 +36,7 @@ locale: ${MOFILES}
 ${POTFILE}:
 	xgettext --language=C++ --add-comments --sort-output \
 	--default-domain=${BINNAME} --from-code=UTF-8 --keyword=_ \
-	--join-existing --package-name=${PKGNAME} --package-version=${PKGVER} \
+	--package-name=${PKGNAME} --package-version=${PKGVER} \
 	--msgid-bugs-address=${ISSUES} --output=$@ ${BINNAME}.cpp
 
 ${LOCALEDIR}/%.po: ${POTFILE}
