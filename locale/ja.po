@@ -1,142 +1,110 @@
-# Japanese translations for PACKAGE package.
-# Copyright (C) 2019 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Automatically generated, 2019.
+# Japanese translations for Hiden.
+# Copyright (C) 2014-2019 Peniel Vargas <tsuneake.kaemitsu@gmail.com>
+# This file is distributed under the same license as the Hiden package.
+# Peniel Vargas <tsuneake.kaemitsu@gmail.com>, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-03 22:15-0400\n"
-"PO-Revision-Date: 2019-03-03 22:15-0400\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"Project-Id-Version: Hiden 1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/vargaspeniel/hiden/issues\n"
+"POT-Creation-Date: 2019-03-07 03:22-0400\n"
+"PO-Revision-Date: 2019-03-07 03:47-0400\n"
+"Last-Translator: Peniel Vargas <tsuneake.kaemitsu@gmail.com>\n"
+"Language-Team: Japanese\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#: hiden.cpp:139
-msgid "1) The file must be present in the program current directory.\n"
-msgstr ""
-
-#: hiden.cpp:140
-msgid "2) The filename must contain its file extension, if it has one.\n"
-msgstr ""
-
-#: hiden.cpp:141
-msgid "3) A unique password is required."
-msgstr ""
+"X-Generator: Poedit 2.2.1\n"
 
 #: hiden.cpp:66
-msgid "Class Project: Encryption Program Project"
-msgstr ""
-
-#: hiden.cpp:61
 msgid ""
-"Copyright (C) 2014-2019 Peniel Vargas\n"
-"\n"
+"Course: COMP 3410 - Computer Security\n"
+"Class Project: Encryption Program Project"
 msgstr ""
+"科目：COMP 3410 - コンピューター・セキュリティ\n"
+"授業プロジェクト：暗号化プログラム・プロジェクト"
 
-#: hiden.cpp:65
-msgid "Course: COMP 3410 - Computer Security\n"
-msgstr ""
+#: hiden.cpp:81
+msgid "Do you wish to run the program again? (Y/N) "
+msgstr "プログラムをもう一度実行しますか？(Y/N) "
 
-#: hiden.cpp:86
-msgid "Do you wish to run the program again? (Yes/No) "
-msgstr ""
-
-#: hiden.cpp:137
+#: hiden.cpp:132
 msgid ""
 "File Selection\n"
 "\n"
 msgstr ""
-
-#: hiden.cpp:149
-msgid "Filename:"
-msgstr ""
-
-#: hiden.cpp:69
-msgid "Hiden from Japanese, meaning: secret, is a simple encryption program\n"
-msgstr ""
-
-#. Program Information & Description
-#: hiden.cpp:60
-msgid "Hiden, Encryption Program\n"
-msgstr ""
-
-#: hiden.cpp:145
-msgid ""
-"If the password is enter incorrectly, when trying to decrypt the file,\n"
-msgstr ""
-
-#: hiden.cpp:110
-msgid "Invalid Option!\n"
-msgstr ""
+"ファイル選択\n"
+"\n"
 
 #: hiden.cpp:144
-msgid "Note: The password will be required when decrypting the file.\n"
-msgstr ""
+msgid "Filename:"
+msgstr "ファイル名："
 
-#. Stores in filename a text line entered at the CLI
-#: hiden.cpp:151
-msgid "Password:"
-msgstr ""
-
-#: hiden.cpp:178
-msgid "Perhaps, the file extension was missing\n"
-msgstr ""
-
-#: hiden.cpp:112
-msgid "Press the [enter] key to exit..."
-msgstr ""
-
-#: hiden.cpp:111
+#. Program Information & Description
+#: hiden.cpp:61
 msgid ""
-"Program Terminated.\n"
+"Hiden, Encryption Program\n"
+"Copyright (C) 2014-2019 Peniel Vargas\n"
 "\n"
-msgstr ""
-
-#: hiden.cpp:177
-msgid "Such a file does not exist!\n"
-msgstr ""
-
-#: hiden.cpp:63
-msgid "This is free software, and you are welcome to\n"
-msgstr ""
-
-#: hiden.cpp:62
-msgid "This program comes with ABSOLUTELY NO WARRANTY.\n"
-msgstr ""
-
-#: hiden.cpp:138
-msgid "To Encrypt/Decrypt a File:\n"
-msgstr ""
-
-#: hiden.cpp:179
-msgid "or the file is not in the program's directory."
-msgstr ""
-
-#: hiden.cpp:72
-msgid "program which provides the user with a way to encrypt files."
-msgstr ""
-
-#: hiden.cpp:64
-msgid ""
+"This program comes with ABSOLUTELY NO WARRANTY.\n"
+"This is free software, and you are welcome to\n"
 "redistribute it under certain conditions\n"
 "\n"
 msgstr ""
+"ヒデン、暗号化プログラム\n"
+"Copyright (C) 2014-2019 バルガス・ペニエル\n"
+"\n"
+"このプログラムは*全くの無保証*で提供されます。\n"
+"これはフリーソフトウェアであり、ある条件の下で再頒布することが\n"
+"奨励されています。\n"
+"\n"
 
-#: hiden.cpp:146
+#: hiden.cpp:105
 msgid ""
+"Invalid Option!\n"
+"Program Terminated.\n"
+"\n"
+"Press the [enter] key to exit..."
+msgstr ""
+"無効なオプション！\n"
+"プログラムが終了されました。\n"
+"\n"
+"終了するにはエンターキーを押して下さい..."
+
+#: hiden.cpp:139
+msgid ""
+"Note: The password will be required when decrypting the file.\n"
+"If the password is enter incorrectly, when trying to decrypt the file,\n"
 "the file will be encrypted again; making its decryption nearly impossible."
 msgstr ""
+"注：ファイルを復号化する時に、パスワードが要求されます。\n"
+"ファイルを復号化する際に、パスワードが正しくないように入力されたら、\n"
+"ファイルはもう一度暗号化され復号化するのは、ほぼ不可能になります。"
 
-#: hiden.cpp:71
-msgid "unique encryption algorithm. Hiden is a CLI (Command Line Interface)\n"
-msgstr ""
+#. Stores in filename a text line entered at the CLI
+#: hiden.cpp:146
+msgid "Password:"
+msgstr "パスワード："
 
-#: hiden.cpp:70
-msgid "written in the C++ Programming Language, which uses its very own and\n"
+#: hiden.cpp:172
+msgid ""
+"Such a file does not exist!\n"
+"Perhaps, the file extension was missing\n"
+"or the file is not in the program's directory."
 msgstr ""
+"そのようなファイルは存在しません！\n"
+"もしかして、ファイルの識別子を省略されるかファイルはプログラムのディレクトリにありません。"
+
+#: hiden.cpp:133
+msgid ""
+"To Encrypt/Decrypt a File:\n"
+"1) The file must be present in the program current directory.\n"
+"2) The filename must contain its file extension, if it has one.\n"
+"3) A unique password is required."
+msgstr ""
+"ファイルを暗号化・復号化するため：\n"
+"1) ファイルは、プログラムのディレクトリに置かなければなりません。\n"
+"2) ファイル名は、ファイルの識別子を追加しなければなりません。\n"
+"3) 一意なパスワードが要求されます。"
