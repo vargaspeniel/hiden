@@ -1,24 +1,25 @@
 /*
- * Copyright (C) 2014-2019  Peniel Vargas <tsuneake.kaemitsu@gmail.com>
- * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ *	Copyright (C) 2014-2019  Peniel Vargas <tsuneake.kaemitsu@gmail.com>
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ *	This program is free software: you can redistribute it and/or modify
+ *	it under the terms of the GNU General Public License as published by
+ *	the Free Software Foundation, either version 3 of the License, or
+ *	(at your option) any later version.
+ *
+ *	This program is distributed in the hope that it will be useful,
+ *	but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *	GNU General Public License for more details.
+ *
+ *	You should have received a copy of the GNU General Public License
+ *	along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 #include <iostream>
 #include <stdlib.h>
 #include <string>
 #include <fstream>
 
+/* xgettext Libraries */
 #include <libintl.h>
 #include <locale.h>
 
@@ -44,9 +45,9 @@ int main()
 {
 	/* Set i18n Environment */
 	setlocale(LC_ALL, "");
-	bindtextdomain ("hiden", "locale/");
+	bindtextdomain ("hiden", getenv("PWD"));
 	textdomain ("hiden");
-	
+
 	menu();
 	fselection();
 	finish();
@@ -57,19 +58,13 @@ int main()
 void menu()
 {
 	/* Program Information & Description */
-	cout << _("Hiden, Encryption Program\n")
-		 << _("Copyright (C) 2014-2019 Peniel Vargas\n\n")
-		 << _("This program comes with ABSOLUTELY NO WARRANTY.\n")
-		 << _("This is free software, and you are welcome to\n")
-		 << _("redistribute it under certain conditions\n\n")
-		 << _("Course: COMP 3410 - Computer Security\n")
-		 << _("Class Project: Encryption Program Project")
-		 << endl
-		 << endl
-		 << _("Hiden from Japanese, meaning: secret, is a simple encryption program\n")
-		 << _("written in the C++ Programming Language, which uses its very own and\n")
-		 << _("unique encryption algorithm. Hiden is a CLI (Command Line Interface)\n")
-		 << _("program which provides the user with a way to encrypt files.")
+	cout << _("Hiden, Encryption Program\n"
+    		  "Copyright (C) 2014-2019 Peniel Vargas\n\n"
+    		  "This program comes with ABSOLUTELY NO WARRANTY.\n"
+    		  "This is free software, and you are welcome to\n"
+    		  "redistribute it under certain conditions\n\n")
+		 << _("Course: COMP 3410 - Computer Security\n"
+		      "Class Project: Encryption Program Project")
 		 << endl
 		 << endl;
 }
@@ -83,10 +78,10 @@ void finish()
 	string state;
 
 	cout << endl
-		 << _("Do you wish to run the program again? (Yes/No) ");
+		 << _("Do you wish to run the program again? (Y/N) ");
 	getline(cin, state, '\n');
 
-	if (("Yes" == state) || ("yes" == state))
+	if (("Y" == state) || ("y" == state))
 	{
 		/*
 			Depending on the OS, runs a statement
@@ -102,14 +97,14 @@ void finish()
 
 		main();
 	}
-	else if (("No" == state) || ("no" == state))
+	else if (("N" == state) || ("n" == state))
 		return;
 	else
 	{
 		cout << endl
-			 << _("Invalid Option!\n")
-			 << _("Program Terminated.\n\n")
-			 << _("Press the [enter] key to exit...");
+			 << _("Invalid Option!\n"
+    			  "Program Terminated.\n\n"
+    			  "Press the [enter] key to exit...");
 		cin.clear();			// Clears the input buffer
 		cin.get();				// Waits for an input operation
 		return;
@@ -135,15 +130,15 @@ void fselection()
 	string filename, password, text;
 
 	cout << _("File Selection\n\n")
-		 << _("To Encrypt/Decrypt a File:\n")
-		 << _("1) The file must be present in the program current directory.\n")
-		 << _("2) The filename must contain its file extension, if it has one.\n")
-		 << _("3) A unique password is required.")
+		 << _("To Encrypt/Decrypt a File:\n"
+    		  "1) The file must be present in the program current directory.\n"
+    		  "2) The filename must contain its file extension, if it has one.\n"
+    		  "3) A unique password is required.")
 		 << endl
 		 << endl
-		 << _("Note: The password will be required when decrypting the file.\n")
-		 << _("If the password is enter incorrectly, when trying to decrypt the file,\n")
-		 << _("the file will be encrypted again; making its decryption nearly impossible.")
+		 << _("Note: The password will be required when decrypting the file.\n"
+    		  "If the password is enter incorrectly, when trying to decrypt the file,\n"
+    		  "the file will be encrypted again; making its decryption nearly impossible.")
 		 << endl
 		 << endl
 		 << _("Filename:");
@@ -174,9 +169,9 @@ void fselection()
 	}
 	else
 		cout << endl
-			 << _("Such a file does not exist!\n")
-			 << _("Perhaps, the file extension was missing\n")
-			 << _("or the file is not in the program's directory.")
+			 << _("Such a file does not exist!\n"
+    			  "Perhaps, the file extension was missing\n"
+    			  "or the file is not in the program's directory.")
 			 << endl;
 }
 
